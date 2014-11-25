@@ -1,0 +1,19 @@
+h1 Rooms List
+
+.row
+   .small-8.columns
+      .row
+         .small-12.columns
+           h3 Create a Room
+
+      .row
+         .small-12.columns
+            h3 Room list
+
+   .small-4.columns
+      h3 Chat
+      #messages.panel.callout.radius
+      input(type='text', ng-model='message')
+      button.success.tiny.radius(ng-click='chat(message)') Send Message
+
+

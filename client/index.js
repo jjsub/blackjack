@@ -6,9 +6,11 @@
       $urlRouterProvider.otherwise('/');
 
       $stateProvider
-        .state('home',     {url:'/',         templateUrl:'/views/home/home.html'})
-        .state('register', {url:'/register', templateUrl:'/views/users/users.html', controller:'UsersCtrl'})
-        .state('login',    {url:'/login',    templateUrl:'/views/users/users.html', controller:'UsersCtrl'});
+        .state('home',       {url:'/',         templateUrl:'/views/home/home.html'})
+        .state('register',   {url:'/register', templateUrl:'/views/users/users.html',      controller:'UsersCtrl'})
+        .state('login',      {url:'/login',    templateUrl:'/views/users/users.html',      controller:'UsersCtrl'})
+        .state('rooms',      {url:'/rooms',    templateUrl:'/views/users/rooms.html',      abstract:true})
+        .state('rooms.list', {url:'',          templateUrl:'/views/users/rooms_list.html', controller:'RoomsListCtrl'});
 
       $localForageProvider.config({name:'hapi-auth', storeName:'cache', version:1.0});
     }])
